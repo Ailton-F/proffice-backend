@@ -11,6 +11,9 @@ class Event extends Model
         'title',
         'description',
         'date',
+        'type',
         'reminder'
     ];
+
+    public static $types = ['test', 'meeting', 'travel', 'other'];
 }

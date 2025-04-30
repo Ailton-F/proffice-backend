@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('phone');
-            $table->boolean('accepts_whatsapp');
-            $table->enum('role', User::$roles);
+            $table->string('phone')->nullable();
+            $table->boolean('accepts_whatsapp')->nullable();
+            $table->enum('role', User::$roles)->default(User::$roles['user']);
             $table->rememberToken();
             $table->timestamps();
         });

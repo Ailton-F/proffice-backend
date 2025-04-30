@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Event;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -16,9 +17,10 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class);
             $table->string('title');
+            $table->enum('type', Event::$types);
             $table->text('description')->nullable();
             $table->datetime('date');
-            $table->boolean('reminder');
+            $table->boolean('reminder')->default(0);
             $table->timestamps();
         });
     }

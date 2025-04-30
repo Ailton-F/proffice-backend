@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('description')->nullable();
             $table->date('date');
-            $table->string('material_url');
+            $table->string('material_url')->nullable();
             $table->timestamps();
         });
     }

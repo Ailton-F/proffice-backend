@@ -17,8 +17,8 @@ return new class extends Migration
             $table->foreignIdFor(User::class);
             $table->string('title');
             $table->text('description')->nullable();
-            $table->string('media_url');
-            $table->boolean('shared');
+            $table->string('media_url')->nullable();
+            $table->boolean('shared')->default(0);
             $table->timestamps();
         });
     }
