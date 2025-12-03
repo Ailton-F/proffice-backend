@@ -20,6 +20,9 @@ return new class extends Migration
             $table->date('date');
             $table->string('material_url')->nullable();
             $table->timestamps();
+
+            // Indexação para otimizar consultas por usuário e data
+            $table->index(['user_id', 'date']);
         });
     }
 

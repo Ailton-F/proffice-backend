@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClassPlanController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\HighlightedLessonController;
@@ -34,4 +35,8 @@ Route::prefix('highlights')->middleware(['auth:sanctum'])->group(function(){
     Route::post('/', [HighlightedLessonController::class, 'store']);
     Route::patch('/{id}', [HighlightedLessonController::class, 'update']);
     Route::delete('/{id}', [HighlightedLessonController::class, 'destroy']);
+});
+
+Route::prefix('auth')->group(function(){
+    Route::post('/login', [AuthController::class, 'authenticate']);
 });

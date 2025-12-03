@@ -28,7 +28,7 @@ class User extends Authenticatable
         'email',
         'password',
         'phone',
-        'accepts_whatsapp'        
+        'accepts_whatsapp'
     ];
 
     /**
@@ -39,6 +39,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'role'
     ];
 
     /**
